@@ -1,0 +1,35 @@
+{{ partial "header.html" . }}
+
+{{if not .IsHome }}
+    <h1>{{ .Title | markdownify }}</h1>
+{{ end }}
+
+
+{{ .Content }}
+
+{{ range (where .Data.Pages "Section" "!=" "") }}
+    <article class="post">
+        <div>
+            <div class="articleinfo">
+                <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                <h3>{{ .Date.Format "January 1, 2006" }}</h3>
+            </div>
+            {{ .Summary }}
+        </div>
+        {{ if .Truncated }}
+        <div>
+            <a href="{{ .RelPermalink }}">Read More…</a>
+        </div>
+        {{ end }}
+    </article>
+{{ end }}
+<!--
+<ul>
+    <li>
+            <span class="date">{{ .Date.Format "January 1, 2006" }}</span>
+            <a href="{{ .URL }}">{{ .Title | markdownify }}</a>
+    </li>
+</ul>
+-->
+
+{{ partial "footer.html" . }}

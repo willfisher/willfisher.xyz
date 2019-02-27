@@ -1,0 +1,11 @@
+
+<ul>
+	{{ i18n "translations" }}:
+	{{ if .IsTranslated }}
+		{{ range .Translations }}
+			<li><a hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}"><span class="flag-icon flag-icon-{{ lower .Language.Params.country }}"></span></a></li>
+		{{ end }}
+	{{ else }}
+		<li>(none)</li>
+	{{ end }}
+</ul>
