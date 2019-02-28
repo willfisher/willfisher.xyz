@@ -11,7 +11,7 @@
     <article class="post">
         <div>
             <div class="articleinfo">
-                <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                <h2><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></h2>
                 <h3>{{ .Date.Format "January 1, 2006" }}</h3>
             </div>
             {{ .Summary }}
@@ -23,13 +23,5 @@
         {{ end }}
     </article>
 {{ end }}
-<!--
-<ul>
-    <li>
-            <span class="date">{{ .Date.Format "January 1, 2006" }}</span>
-            <a href="{{ .URL }}">{{ .Title | markdownify }}</a>
-    </li>
-</ul>
--->
 
 {{ partial "footer.html" . }}

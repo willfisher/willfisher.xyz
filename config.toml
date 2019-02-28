@@ -2,6 +2,7 @@ baseurl = "http://www.willfisher.xyz"
 title = "willfisher"
 theme = "minimal"
 defaultcontentlanguage = "en"
+summaryLength = 30
 
 [languages]
 	[languages.en]
@@ -28,19 +29,15 @@ defaultcontentlanguage = "en"
 			weight = 3
 
 		[[languages.en.menu.main]]
-			name = "Math"
-			url = "/categories/math"
+			name = "Categories"
+			url = "/categories/"
 			weight = 4
 
 		[[languages.en.menu.main]]
-			name = "Computer Science"
-			url = "/categories/computer-science"
+			name = "Tags"
+			url = "/tags/"
 			weight = 5
 
-		[[languages.en.menu.main]]
-			name = "Languages"
-			url = "/categories/languages"
-			weight = 6
 		[languages.en.Author]
 			FullName = "Will Fisher"
 			Email = "wfish454@gmail.com"
@@ -69,19 +66,15 @@ defaultcontentlanguage = "en"
 			weight = 3
 
 		[[languages.fr.menu.main]]
-			name = "Les Maths"
-			url = "/catégories/maths"
+			name = "Catégories"
+			url = "/catégories/"
 			weight = 4
 
 		[[languages.fr.menu.main]]
-			name = "L'Informatique"
-			url = "/catégories/informatique"
+			name = "Plaques"
+			url = "/plaques/"
 			weight = 5
 
-		[[languages.fr.menu.main]]
-			name = "Les Langues"
-			url = "/catégories/langues"
-			weight = 6
 		[languages.fr.Author]
 			FullName = "Will Fisher"
 			Email = "wfish454@gmail.com"
@@ -112,19 +105,15 @@ defaultcontentlanguage = "en"
 			weight = 3
 
 		[[languages.es.menu.main]]
-			name = "Las Mates"
-			url = "/categorías/mates"
+			name = "Categorías"
+			url = "/categorías/"
 			weight = 4
 
 		[[languages.es.menu.main]]
-			name = "La Informática"
-			url = "/categorías/informática"
+			name = "Etiquetas"
+			url = "/etiquetas/"
 			weight = 5
 
-		[[languages.es.menu.main]]
-			name = "Los Idiomas"
-			url = "/categorías/idiomas"
-			weight = 6
 		[languages.es.Author]
 			FullName = "Will Fisher"
 			Email = "wfish454@gmail.com"

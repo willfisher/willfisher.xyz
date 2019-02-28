@@ -1,0 +1,14 @@
+.theorem {
+	display: block;
+	font-style: italic;
+	background-color: #F6F8FA;
+	padding: 10px;
+}
+.theorem:before {
+	content: "Theorem. ";
+	font-weight: bold;
+	font-style: normal;
+}
+.theorem[text]:before {
+	content: "Theorem (" attr(text) "). ";
+}
