@@ -1,14 +1,36 @@
+body {
+	counter-reset: theorem;
+	counter-reset: lemma;
+}
+
 .theorem {
 	display: block;
 	font-style: italic;
 	background-color: #F6F8FA;
 	padding: 10px;
 }
+.theorem::before { counter-increment: theorem; }
 .theorem:before {
-	content: "Theorem. ";
+	content: "Theorem " counter(theorem) ". ";
 	font-weight: bold;
 	font-style: normal;
 }
 .theorem[text]:before {
-	content: "Theorem (" attr(text) "). ";
+	content: "Theorem " counter(theorem) " (" attr(text) "). ";
+}
+
+.lemma {
+	display: block;
+	font-style: italic;
+	background-color: #F6F8FA;
+	padding: 10px;
+}
+.lemma::before { counter-increment: lemma; }
+.lemma:before {
+	content: "Lemma " counter(lemma) ". ";
+	font-weight: bold;
+	font-style: normal;
+}
+.lemma[text]:before {
+	content: "Lemma " counter(lemma) " (" attr(text) "). ";
 }

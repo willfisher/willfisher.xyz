@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 
 {{if not .IsHome }}
-    <h1>{{ .Title | markdownify }}</h1>
+    <h1 class="titlefont">{{ .Title | markdownify }}</h1>
 {{ end }}
 
 
@@ -10,7 +10,7 @@
 {{ range (where .Data.Pages "Section" "!=" "") }}
     <article class="post">
         <div>
-            <div class="articleinfo">
+            <div class="articleinfo titlefont">
                 <h2><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></h2>
                 <h3>{{ .Date.Format "January 1, 2006" }}</h3>
             </div>

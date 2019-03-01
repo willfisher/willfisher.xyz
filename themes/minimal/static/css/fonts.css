@@ -1,6 +1,10 @@
 body {
-  font-family: 'Nunito Sans', Optima, Candara, Calibri, Arial, sans-serif;
+      font-family: 'Open Sans', 'Nunito Sans', Optima, Candara, Calibri, Arial, sans-serif;
 }
+.titlefont {
+    font-family: 'Nunito Sans', 'Open Sans', Optima, Candara, Calibri, Arial, sans-serif;
+}
+
 code {
   font-family: "Lucida Console", Monaco, monospace;
   font-size: 85%;
