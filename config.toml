@@ -1,4 +1,4 @@
-baseurl = "https://enigmatic-meadow-59428.herokuapp.com/"
+baseurl = "https://posts.wf/"
 title = "Will Fisher's Blog"
 theme = "minimal"
 defaultcontentlanguage = "en"
