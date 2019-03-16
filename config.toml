@@ -1,5 +1,5 @@
-baseurl = "http://www.willfisher.xyz"
-title = "willfisher"
+baseurl = "https://enigmatic-meadow-59428.herokuapp.com/"
+title = "Will Fisher's Blog"
 theme = "minimal"
 defaultcontentlanguage = "en"
 summaryLength = 30
