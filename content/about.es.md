@@ -1,6 +1,6 @@
 ---
 title: "Me Conocer"
-draft: true
+draft: false
 slug: me-conocer
 ---
 
