@@ -1,4 +1,4 @@
-baseurl = "https://posts.wf/"
+baseurl = "http://posts.wf/"
 title = "Will Fisher's Blog"
 theme = "minimal"
 defaultcontentlanguage = "en"
