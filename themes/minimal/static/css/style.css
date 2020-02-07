@@ -19,7 +19,7 @@ body a { text-decoration: none; font-weight: bold; }
   border-radius: 5px;
 }
 .menu a:visited {
-    color: inherit;
+    /*color: inherit;*/
 }
 .menu, .article-meta, footer { text-align: center; }
 .title { font-size: 1.1em; }

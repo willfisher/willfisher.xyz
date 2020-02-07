@@ -8,13 +8,13 @@ body {
 	background-color: #F6F8FA;
 	padding: 10px;
 }
-.theorem::before { counter-increment: theorem; }
-.theorem:before {
+.theorem::before {
+	counter-increment: theorem;
 	content: "Theorem " counter(theorem) ". ";
 	font-weight: bold;
 	font-style: normal;
 }
-.theorem[text]:before {
+.theorem[text]::before {
 	content: "Theorem " counter(theorem) " (" attr(text) "). ";
 }
 
@@ -24,13 +24,13 @@ body {
 	background-color: #F6F8FA;
 	padding: 10px;
 }
-.lemma::before { counter-increment: lemma; }
-.lemma:before {
+.lemma::before {
+	counter-increment: lemma;
 	content: "Lemma " counter(lemma) ". ";
 	font-weight: bold;
 	font-style: normal;
 }
-.lemma[text]:before {
+.lemma[text]::before {
 	content: "Lemma " counter(lemma) " (" attr(text) "). ";
 }
 
@@ -40,13 +40,13 @@ body {
 	background-color: #F6F8FA;
 	padding: 10px;
 }
-.proposition::before { counter-increment: proposition; }
-.proposition:before {
+.proposition::before {
+	counter-increment: proposition;
 	content: "Proposition " counter(proposition) ". ";
 	font-weight: bold;
 	font-style: normal;
 }
-.proposition[text]:before {
+.proposition[text]::before {
 	content: "Proposition " counter(proposition) " (" attr(text) "). ";
 }
 
@@ -56,12 +56,27 @@ body {
 	background-color: #F6F8FA;
 	padding: 10px;
 }
-.corollary::before { counter-increment: corollary; }
-.corollary:before {
+.corollary::before {
+	counter-increment: corollary;
 	content: "Corollary " counter(corollary) ". ";
 	font-weight: bold;
 	font-style: normal;
 }
-.corollary[text]:before {
+.corollary[text]::before {
 	content: "Corollary " counter(corollary) " (" attr(text) "). ";
+}
+
+.proof {
+	display: block;
+}
+.proof::before {
+	content: "Proof: ";
+	font-style: italic;
+}
+.proof[text]::before {
+	content: "Proof (" attr(text) "): ";
+}
+.proof::after {
+	float: right;
+	content: "\2610";
 }

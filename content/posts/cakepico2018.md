@@ -2,12 +2,13 @@
 title: "Cake PicoCTF 2018 Writeup"
 date: 2019-03-22T19:49:28-05:00
 author: Will
+categories: ["Computer Science"]
 draft: false
 ---
 
 In October of 2018, I competed in PicoCTF 2018 with my friend, also named Will. Overall we managed to get fourth (albeit tied for third in score) in the US high school leaderboards and tenth globally. In this post I go over our solution to the cake binary exploitation problem.
 
-##### Understanding the problem
+## Understanding the problem
 For this problem we are given a binary file and a libc file. The first step to solving this problem is to reverse the binary file and try to get an understanding of what is going on. Upon doing this, we get the following C pseudocode of what's going on:
 
 <details><summary>Cake Source Pseudocode</summary>
@@ -111,7 +112,7 @@ void serve(struct shop* shop) {
 
 we see that the cake we serve is freed but we still have access to it in the cakes array stored in our shop struct. How can we exploit this? Well, having just come out of doing contacts, it makes sense to try and utilize a double free in some sort of manner. Let's see what we have to work with.
 
-##### Leaking libc
+## Leaking libc
 Thankfully the problem gives us an inspect cake functionality, and this clearly motivates us to leak something: namely libc so that we can defeat ASLR. Trying what we did in `contacts` doesn't work: If we create two cakes, free the first, then inspect the first, we don't get anything interesting. This is because the cakes are being allocated fastbin chunks, so simply inspecting the freed fastbin chunk won't help us leak anything (in `contacts` we had the ability to inspect a freed smallbin). In fact, looking at the `make` method, cakes only malloc 16 bytes of data which restricts a lot of what we were able to do in `contacts`.
 
 This is where we get creative. Notice that each action we take has a chance of incrementing the number of customers we have. Moreover, looking at the store pointer (which has constant location in memory) we see that the structure is such that the total money made is stored in the first qword and the total customers waiting is stored in the second qword, and that the following memory stores all our cake pointers.
@@ -136,7 +137,7 @@ make cake (price = 0x6030e0) -> make cake -> make cake -> make cake (price = 0x6
 ```
 (here `p64` is a function that packs the address into a string). Finally calling inspect on cake 1 outputs stdout's GOT entry as the price.
 
-##### Overwriting \_\_malloc\_hook
+## Overwriting \_\_malloc\_hook
 Perfect! We've leaked libc! Now it's time to use this to overwrite something important, for which we choose to overwrite \_\_malloc\_hook just like in contacts. How can we do this? Well, we can't do it like we did in contacts. In contacts, we used the fact that there is a `0x7f` byte that we can isolate as a fake chunk header very close to \_\_malloc\_hook. However, there is two problems with that here. Firstly, creating a cake requests only 16 bytes to which `0x7f` is too large of a size specifier. Secondly, creating a cake only let's us write 16 bytes, and using this `0x7f` as our fake header is too far away from \_\_malloc\_hook to let us overwrite it. How do we get around this? Well the trick is to notice that when creating a cake, the name attribute is stored at offset `+0x8` from the start of the cake, but it is written first (followed by writing price). Thus imagine we trick malloc to return the shop address while writing data for cake 1. Writing the name for cake 1 would overwrite cake 1's own pointer, to which we could replace with an abritrary address, and then when we input our price for cake 1 it will be written at the victim address we overwrote cake 1's pointer to. The goal is now reduced to setting up the scenario in which we are writing data for cake 1 at the location of shop.
 
 The first problem we have to solve is the fact that we already allocated cake 1 in order to leak libc, so without some extra work, creating new cakes will never try to create cake 1 again. To solve this we can do another double free to trick malloc into returning the shop address, and then overwrite cake 1's pointer will null so that we can create it again. This looks like the following sequence of actions
@@ -153,7 +154,7 @@ create cake (name = p64(__malloc_hook), price = one_gadget)
 ```
 Then the next time we malloc something, the \_\_malloc\_hook function will be called and we win. First we serve a cake to fix the fastbin list, then create a new cake and we're in!
 
-###### Full Exploit
+## Full Exploit
 The full exploit is below.
 ```python
 from pwn import *
