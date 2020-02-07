@@ -53,7 +53,7 @@ Finally, let `$E(x)=x-[x]$`.
 <span class="proof">
 	We will accept as fact that for all irrational numbers, the convergents of that number are best rational approximations of the second kind (a proof of this can be easily [searched](https://proofwiki.org/wiki/Convergents_are_Best_Approximations)). This means we have that
 	`$$|B_n\alpha - A_n| \le |q\alpha - p|$$`
-	for all `$p,q\in\mathbb{N}$` such that `$q < B_{n+1}$` with equality exactly when `$q=B_n$` and `$p=A_n$`. spaniding by `$\alpha$`,
+	for all `$p,q\in\mathbb{N}$` such that `$q < B_{n+1}$` with equality exactly when `$q=B_n$` and `$p=A_n$`. Dividing by `$\alpha$`,
 	`$$\left|B_n - \frac{A_n}{\alpha}\right| < \left|q-\frac{p}{\alpha}\right|$$`
 	for all `$p,q\in\mathbb{N}$` such that `$q<B_{n+1}$` and `$p\neq A_n$`. Noting by properties of continued fractions that `$B_n=[A_n/\alpha]$`, and similarily that `$[p/\alpha] < B_{n+1}$` for `$p < A_{n+1}$`, by letting `$p=[p/\alpha]$` we see that the above equation gives the desired result.
 </span>
