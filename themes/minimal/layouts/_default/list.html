@@ -1,6 +1,8 @@
 {{ partial "header.html" . }}
 
-{{if not .IsHome }}
+{{if .IsHome }}
+    <h3>{{ i18n "home" }}</h3>
+{{ else }}
     <h1 class="titlefont">{{ .Title | markdownify }}</h1>
 {{ end }}
 

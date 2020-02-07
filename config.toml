@@ -1,5 +1,5 @@
-baseurl = "http://www.willfisher.xyz"
-title = "willfisher"
+baseurl = "http://posts.wf/"
+title = "Will Fisher's Blog"
 theme = "minimal"
 defaultcontentlanguage = "en"
 summaryLength = 30
