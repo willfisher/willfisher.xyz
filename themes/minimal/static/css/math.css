@@ -1,6 +1,5 @@
 body {
-	counter-reset: theorem;
-	counter-reset: lemma;
+	counter-reset: theorem lemma corollary proposition;
 }
 
 .theorem {
@@ -33,4 +32,36 @@ body {
 }
 .lemma[text]:before {
 	content: "Lemma " counter(lemma) " (" attr(text) "). ";
+}
+
+.proposition {
+	display: block;
+	font-style: italic;
+	background-color: #F6F8FA;
+	padding: 10px;
+}
+.proposition::before { counter-increment: proposition; }
+.proposition:before {
+	content: "Proposition " counter(proposition) ". ";
+	font-weight: bold;
+	font-style: normal;
+}
+.proposition[text]:before {
+	content: "Proposition " counter(proposition) " (" attr(text) "). ";
+}
+
+.corollary {
+	display: block;
+	font-style: italic;
+	background-color: #F6F8FA;
+	padding: 10px;
+}
+.corollary::before { counter-increment: corollary; }
+.corollary:before {
+	content: "Corollary " counter(corollary) ". ";
+	font-weight: bold;
+	font-style: normal;
+}
+.corollary[text]:before {
+	content: "Corollary " counter(corollary) " (" attr(text) "). ";
 }

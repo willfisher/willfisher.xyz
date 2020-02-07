@@ -6,7 +6,8 @@ body {
 }
 body a:visited, a:link { color: inherit; }
 body a:hover { color: #aaaaaa; }
-body a { text-decoration: none; }
+body a { text-decoration: none; font-weight: bold; }
+.normallink a { font-weight: normal; }
 
 /* header and footer areas */
 .menu { padding: 0; }
