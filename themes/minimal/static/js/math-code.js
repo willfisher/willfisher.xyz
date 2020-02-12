@@ -100,6 +100,7 @@ class EqRef extends HTMLElement {
         var reference = document.getElementById(this.refid);
         var components = reference.innerText.split(" ");
         var link = components[0] + " " + components[1];
+        link = link.replace('.'g, "");
         this.innerHTML = '<a href="#' + this.refid + '">' + link + '</a>';
     }
 }
