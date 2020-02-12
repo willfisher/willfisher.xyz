@@ -66,7 +66,7 @@ function translate(value) {
     envs.forEach(function(env) {
         var nodes = document.getElementsByClassName(env);
         for(let node of nodes) {
-            var header = translate(env) + " " + counter[env] + " " + (node.hasAttribute("name") ? "(" + node.getAttribute("name") + ")" : "") + ".";
+            var header = translate(env) + " " + counter[env] + (node.hasAttribute("name") ? " (" + node.getAttribute("name") + ")" : "") + ".";
             node.innerHTML = "<span class='math-header'>" + header + "</span>" + " " + node.innerHTML;
             counter[env] += 1;
         }
