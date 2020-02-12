@@ -30,6 +30,13 @@ body {
 	counter-reset: theorem lemma corollary proposition;
 }
 
+.math-env {
+	display: block;
+	font-style: italic;
+	background-color: #F6F8FA;
+	padding: 10px;
+}
+
 .math-header {
 	font-style: normal;
 	font-weight: bold;
@@ -120,4 +127,17 @@ body {
 .proof::after {
 	float: right;
 	content: "\2610";
+}
+
+/* Citations */
+ol.bibliography {
+	padding-left: 0;
+    counter-reset: list;
+}
+ol.bibliography > li {
+    list-style: none;
+}
+ol.bibliography > li::before {
+    content: "[" counter(list) "] ";
+    counter-increment: list;
 }

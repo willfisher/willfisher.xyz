@@ -1,3 +1,9 @@
+window.MathJax = {
+    tex: {
+        tags: 'ams'
+    }
+};
+
 (function() {
     var i, text, code, codes = document.getElementsByTagName('code');
     for (i = 0; i < codes.length;) {
