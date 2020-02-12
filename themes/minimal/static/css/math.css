@@ -1,5 +1,38 @@
+:root:lang(en) {
+	--theorem: "Theorem";
+	--lemma: "Lemma";
+	--proposition: "Proposition";
+	--corollary: "Corollary";
+	--definition: "Definition";
+	--remark: "Remark";
+	--proof: "Proof";
+}
+:root:lang(fr) {
+	--theorem: "Théorème";
+	--lemma: "Lemme";
+	--proposition: "Proposition";
+	--corollary: "Corollaire";
+	--definition: "Définition";
+	--remark: "Remarque";
+	--proof: "Démonstration";
+}
+:root:lang(es) {
+	--theorem: "Teorema";
+	--lemma: "Lema";
+	--proposition: "Proposición";
+	--corollary: "Corolario";
+	--definition: "Definición";
+	--remark: "Nota";
+	--proof: "Demostración";
+}
+
 body {
 	counter-reset: theorem lemma corollary proposition;
+}
+
+.math-header {
+	font-style: normal;
+	font-weight: bold;
 }
 
 .theorem {
@@ -8,15 +41,17 @@ body {
 	background-color: #F6F8FA;
 	padding: 10px;
 }
+/*
 .theorem::before {
 	counter-increment: theorem;
-	content: "Theorem " counter(theorem) ". ";
+	content: var(--theorem, "Theorem") " " counter(theorem) ". ";
 	font-weight: bold;
 	font-style: normal;
 }
-.theorem[text]::before {
-	content: "Theorem " counter(theorem) " (" attr(text) "). ";
+.theorem[name]::before {
+	content: var(--theorem, "Theorem") " " counter(theorem) " (" attr(name) "). ";
 }
+*/
 
 .lemma {
 	display: block;
@@ -24,15 +59,17 @@ body {
 	background-color: #F6F8FA;
 	padding: 10px;
 }
+/*
 .lemma::before {
 	counter-increment: lemma;
-	content: "Lemma " counter(lemma) ". ";
+	content: var(--lemma, "Lemma") " " counter(lemma) ". ";
 	font-weight: bold;
 	font-style: normal;
 }
-.lemma[text]::before {
-	content: "Lemma " counter(lemma) " (" attr(text) "). ";
+.lemma[name]::before {
+	content: var(--lemma, "Lemma") " " counter(lemma) " (" attr(name) "). ";
 }
+*/
 
 .proposition {
 	display: block;
@@ -40,15 +77,17 @@ body {
 	background-color: #F6F8FA;
 	padding: 10px;
 }
+/*
 .proposition::before {
 	counter-increment: proposition;
-	content: "Proposition " counter(proposition) ". ";
+	content: var(--proposition, "Proposition") " " counter(proposition) ". ";
 	font-weight: bold;
 	font-style: normal;
 }
-.proposition[text]::before {
-	content: "Proposition " counter(proposition) " (" attr(text) "). ";
+.proposition[name]::before {
+	content: var(--proposition, "Proposition") " " counter(proposition) " (" attr(name) "). ";
 }
+*/
 
 .corollary {
 	display: block;
@@ -56,25 +95,27 @@ body {
 	background-color: #F6F8FA;
 	padding: 10px;
 }
+/*
 .corollary::before {
 	counter-increment: corollary;
-	content: "Corollary " counter(corollary) ". ";
+	content: var(--corollary, "Corollary") " " counter(corollary) ". ";
 	font-weight: bold;
 	font-style: normal;
 }
-.corollary[text]::before {
-	content: "Corollary " counter(corollary) " (" attr(text) "). ";
+.corollary[name]::before {
+	content: var(--corollary, "Corollary") " " counter(corollary) " (" attr(name) "). ";
 }
+*/
 
 .proof {
 	display: block;
 }
 .proof::before {
-	content: "Proof: ";
+	content: var(--proof, "Proof") ": ";
 	font-style: italic;
 }
-.proof[text]::before {
-	content: "Proof (" attr(text) "): ";
+.proof[name]::before {
+	content: var(--proof, "Proof") " (" attr(name) "): ";
 }
 .proof::after {
 	float: right;
