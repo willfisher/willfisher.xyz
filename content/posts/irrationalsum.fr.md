@@ -5,7 +5,7 @@ catégories: ["Maths"]
 draft: false
 ---
 
-Dans ce post, nous cherchons à prouver le théorème suivant.
+Dans ce post, nous cherchons à démontrer le théorème suivant.
 
 <span class="theorem" id="thm1">
 	Soit `$\theta$` irrationnel. Définez `$\rho_{\theta}:\mathbb{N}\to \mathbb{Z}$` par
