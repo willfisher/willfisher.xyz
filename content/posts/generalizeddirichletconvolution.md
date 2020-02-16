@@ -2,6 +2,8 @@
 title: "Real Powers of Dirichlet Convolution"
 date: 2020-02-12T16:32:21-06:00
 author: Will
+categories: ["Math"]
+tags: ["Number Theory", "Dirichlet Convolution"]
 draft: false
 ---
 

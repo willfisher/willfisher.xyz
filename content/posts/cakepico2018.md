@@ -3,6 +3,7 @@ title: "Cake PicoCTF 2018 Writeup"
 date: 2019-03-22T19:49:28-05:00
 author: Will
 categories: ["Computer Science"]
+tags: ["CTF"]
 draft: false
 ---
 

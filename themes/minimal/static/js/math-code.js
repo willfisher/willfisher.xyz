@@ -19,7 +19,7 @@
     }
 })();
 
-var envs = ["theorem", "proposition", "lemma", "corollary", "remark", "definition"];
+var envs = ["theorem", "proposition", "lemma", "corollary", "remark", "definition", "exercise"];
 var i18n = {
     "theorem" : {
         "en" : "Theorem",
@@ -50,6 +50,11 @@ var i18n = {
         "en" : "Definition",
         "fr" : "Définition",
         "es" : "Definición"
+    },
+    "exercise" : {
+        "en" : "Exercise",
+        "fr" : "Exercice",
+        "es" : "Ejercicio"
     }
 }
 function translate(value) {
