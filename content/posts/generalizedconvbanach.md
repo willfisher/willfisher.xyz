@@ -104,7 +104,7 @@ Applying the binomial theorem and using <eq-ref refid="expexercise"></eq-ref> we
 	\end{aligned}
 \end{equation*}
 Note that when evaluating $f^k(n)$, we can truncate the infinite series above at $\ell=\Omega(n)$, as $(f-f(1)\cdot\varepsilon)^\ell(n)=0$ for $\ell>\Omega(n)$.<br>
-&emsp;&emsp;One can verify that using this, the main theorem of the last post holds, even with the same hypothesis that $f\in\mathcal{A}_r$ for some $r$, i.e. that $\mathcal{D}[f](s)$ converges for some $s$.
+&emsp;&emsp;One can verify that using this, the main theorem of the last post holds, even with the same hypothesis that $f\in\mathcal{A}_r$ for some $r$, i.e. that $\mathcal{D}[f](s)$ converges for some $s$. A final note is that because $\|f\|_p\le\|f\|_q$ if $p\ge q$, any sequence in $\mathcal{A}_p\cap\mathcal{A}_q$ that converges in both spaces converges will have the same limit in each space, meaning that our definition of $f^k$ is consistent regardless of which $\mathcal{A}_r$ we view $f$ as an element of.
 
 </div>
 
