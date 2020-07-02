@@ -6,7 +6,6 @@
     <h1 class="titlefont">{{ .Title | markdownify }}</h1>
 {{ end }}
 
-
 {{ .Content }}
 
 {{ range (where .Data.Pages "Section" "!=" "") }}

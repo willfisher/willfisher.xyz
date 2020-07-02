@@ -15,7 +15,6 @@ In a <a href="{{< ref "generalizeddirichletconvolution.md" >}}">recent post</a>,
 
 <div class="latex-post">
 &emsp;&emsp;To do this we will need the notion of Banach algebras.
-
 <div class="definition" name="Banach algebra">
 A Banach algebra, $A$, is an associative $\mathbb{R}$ or $\mathbb{C}$-algebra that is also a Banach space with norm satisfying
 	\begin{equation}\label{eq:banachalgcont}
