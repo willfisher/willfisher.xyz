@@ -1,8 +1,9 @@
-baseurl = "http://posts.wf/"
+baseurl = "http://gripingberry.pw/"
 title = "Will Fisher's Blog"
 theme = "minimal"
 defaultcontentlanguage = "en"
 summaryLength = 30
+PygmentsCodeFences = true
 
 [languages]
 	[languages.en]
