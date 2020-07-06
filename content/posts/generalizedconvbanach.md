@@ -98,7 +98,7 @@ Finally, if $f\in\mathcal{A}_r$, it's clear that $f\in\mathcal{A}_q$ for all $q\
 Applying the binomial theorem and using <eq-ref refid="expexercise"></eq-ref> we get that
 \begin{equation*}
 	\begin{aligned}
-		f^k=(f-f(1)\cdot\varepsilon + f(1)\cdot\varepsilon) &= \sum_{\ell=0}^\infty \binom{k}{\ell} f(1)^{k-\ell}\cdot\varepsilon \ast (f-f(1)\cdot\varepsilon)^\ell \\
+		f^k=(f-f(1)\cdot\varepsilon + f(1)\cdot\varepsilon)^k &= \sum_{\ell=0}^\infty \binom{k}{\ell} f(1)^{k-\ell}\cdot\varepsilon \ast (f-f(1)\cdot\varepsilon)^\ell \\
 		&= \sum_{\ell=0}^\infty \binom{k}{\ell} f(1)^{k-\ell}(f-f(1)\cdot\varepsilon)^\ell.
 	\end{aligned}
 \end{equation*}
