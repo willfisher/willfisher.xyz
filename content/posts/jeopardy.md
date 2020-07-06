@@ -15,7 +15,7 @@ In this post I talk about a write up for a problem named `Jeopardy` that I encou
 
 &emsp;&emsp;We are given the following source code of the server:
 
-<details><summary>Server source code (`jeopardy.sage`)</summary>
+<details><summary>Server source code</summary>
 
 ```python
 #!/usr/bin/env sage
