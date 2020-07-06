@@ -8,7 +8,9 @@
 
 {{ .Content }}
 
-{{ range (where .Data.Pages "Section" "!=" "") }}
+{{ $pages := .Pages }}
+{{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
+{{ range (where $pages "Section" "!=" "") }}
     <article class="post">
         <div>
             <div class="articleinfo titlefont">

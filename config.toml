@@ -4,6 +4,14 @@ theme = "minimal"
 defaultcontentlanguage = "en"
 summaryLength = 30
 PygmentsCodeFences = true
+PygmentsUseClasses = false
+PygmentsStyle = "murphy"
+
+[markup]
+	defaultMarkdownHandler = "goldmark"
+	[markup.goldmark]
+		[markup.goldmark.renderer]
+			unsafe = true
 
 [languages]
 	[languages.en]

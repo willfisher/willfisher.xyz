@@ -157,6 +157,9 @@ Then the next time we malloc something, the \_\_malloc\_hook function will be ca
 
 ## Full Exploit
 The full exploit is below.
+
+<details><summary>Full exploit</summary>
+
 ```python
 from pwn import *
 
@@ -264,4 +267,7 @@ if __name__ == "__main__":
 	r = remote("2018shell2.picoctf.com", 36275)
 	exploit()
 ```
+
+</details>
+
 The one point of interest is that pwntools ELF class got the wrong offset for \_\_malloc\_hook, and the error term happened to also be the same as the error in offset for the one gadget's given by david942j's [one gadget tool](https://github.com/david942j/one_gadget), which explains adding the term `(0x3a5260 - libc.symbols["__malloc_hook"])` to the one gadget address.

@@ -7,7 +7,7 @@ tags: ["Elliptic Curves", "Number Theory"]
 draft: false
 ---
 
-In this post a talk about a write up for a problem named `Jeopardy` that I encountered recently during redpwnCTF 2020. Despite having the exact idea correct, I didn't manage to solve the problem during the competition. Here I go over the solution.
+In this post I talk about a write up for a problem named `Jeopardy` that I encountered recently during redpwnCTF 2020. Despite having the exact idea correct, I didn't manage to solve the problem during the competition. Here I go over the solution.
 
 <!--more-->
 
@@ -178,6 +178,7 @@ but for $n$ large, this additional factor is rather negligible.
 &emsp;&emsp;Having properly analyzed the `isPrime` function, for which one can just look up large Carmichael numbers and find one with high probability of passing, it remains to construct an elliptic curve of this order. For this, there's an [excellent thesis](https://www.math.leidenuniv.nl/scripties/Broker.pdf) by Broker. Essentially, using complex multiplication, we can construct on elliptic curve `$E/\mathbb{F}_p$` with trace of Frobenius `$t$`. Thus if we have a prime `$p$` and `$t$` such that `$N=p+1-t$` we are theoretically done. However, the bottleneck of this algorithm is in computing the Hilbert class polynomial `$P_{\Delta}$` where `$\Delta=t^2-4p$`. However, it suffices to compute the class polynomial `$P_D$` where `$D=\text{disc}(\mathbb{Q}(\sqrt{\Delta}))$`. Since `$N$` is the only fixed value, the paper presents an efficient algorithm for finding such `$p$` so that `$D$` is small. The implemented version of Broker's algorithm is below:
 
 <details><summary>Generating curves of prescribed order</summary>
+
 ```python
 # Constructing Elliptic Curves of Prescribed Order, Reinier Martjn Broker
 # http://web.math.leidenuniv.nl/scripties/Broker.pdf
@@ -303,6 +304,7 @@ if __name__ == '__main__':
 	for i in range(20):
 		generate_curve(random.randint(1000, 100000))
 ```
+
 </details>
 
 For some strange reason, the algorithm struggles if `minimal_discriminant` returns with `$d=1$` or `$d=3$`. As a quick-fix, you could just yield the value of the function, and keep going if it fails.
